@@ -28,13 +28,16 @@ public class DynamicArray {
         throwException(indexRM);
 
         int[] numsTemp = new int[capacity];
-        for (int index = 0; index < size; index++) {
-            if (index != indexRM) {
-                numsTemp[index] = nums[index];
+        int indexTemp = 0;
+        for (int indexNums = 0; indexNums < size; indexNums++) {
+            if (indexNums != indexRM) {
+                numsTemp[indexTemp] = nums[indexNums];
+                indexTemp++;
             }
         }
 
         nums = numsTemp;
+        size--;
     }
 
     public void set (int indexSet, int value) {

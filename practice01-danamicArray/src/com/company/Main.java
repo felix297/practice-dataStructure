@@ -2,15 +2,23 @@ package com.company;
 
 public class Main {
     public static void main (String[] args) throws Exception {
-        int[] nums1 = new int[10];
-        for (int ele: nums1) {
-            System.out.println(ele);
+        DynamicArray array = new DynamicArray();
+        array.add(1);
+        array.add(2);
+        array.add(3);
+        array.set(2, 4);
+
+        System.out.println("The size of array before removal is: " + array.size());
+        System.out.println("The elements of array before removal are: ");
+        for (int index = 0; index < array.size(); index ++) {
+            System.out.println(array.get(index));
         }
+        array.remove(0);
 
-
-        int[] nums2 = new int[]{1,2,34,4};
-        for (int ele: nums2) {
-            System.out.println(ele);
+        System.out.println("The size of array after removal is: " + array.size());
+        System.out.println("The elements of array before removal are: ");
+        for (int index = 0; index < array.size(); index++) {
+            System.out.println(array.get(index));
         }
     }
 }
